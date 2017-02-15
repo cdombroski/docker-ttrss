@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+foreground {
+cd /usr/html
+exec -c git pull
+}
+s6-svc -h /var/run/s6/services/ttrss

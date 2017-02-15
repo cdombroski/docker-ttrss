@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv sh
+cd /usr/html
+git pull
+cp /usr/html/config.php-dist /usr/html/config.php
+sed -i -e "s@'SELF_URL_PATH'.*@'SELF_URL_PATH', '${SELF_URL_PATH:-http://localhost/}');@" /usr/html/config.php
+sed -i -e "s@'DB_HOST'.*@'DB_HOST', '${DB_HOST:-db}');@" /usr/html/config.php
+sed -i -e "s@'DB_USER'.*@'DB_USER', '${DB_USER:-ttrss}');@" /usr/html/config.php
+sed -i -e "s@'DB_NAME'.*@'DB_NAME', '${DB_NAME:-ttrss}');@" /usr/html/config.php
+sed -i -e "s@'DB_PASS'.*@'DB_PASS', '${DB_PASS:-ttrss}');@" /usr/html/config.php
+sed -i -e "s@'DB_PORT'.*@'DB_PORT', '${DB_PORT:-5432}');@" /usr/html/config.php
