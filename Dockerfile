@@ -3,7 +3,7 @@ ENV SELF_URL_PATH=http://localhost/ DB_HOST=db DB_PORT=5432 DB_USER=ttrss \
 DB_PASS=ttrss DB_NAME=ttrss
 ADD rootfs /
 RUN apk add --no-cache git php php-pgsql php-fpm php-cli php-curl php-gd \
-php-json php-mcrypt php-dom php-pcntl php-posix
+php-json php-mcrypt php-dom php-pcntl php-posix php-pdo
 RUN rm /usr/html/index.html && \
 git clone https://git.tt-rss.org/git/tt-rss.git /usr/html && \
 chgrp -R www-data /usr/html && \
