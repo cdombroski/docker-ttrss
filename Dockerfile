@@ -5,7 +5,7 @@ ADD rootfs /
 RUN apk add --no-cache git php php-pgsql php-fpm php-cli php-curl php-gd \
 php-json php-mcrypt php-dom php-pcntl php-posix
 RUN rm /usr/html/index.html && \
-git clone https://tt-rss.org/gitlab/fox/tt-rss.git /usr/html && \
+git clone https://git.tt-rss.org/git/tt-rss.git /usr/html && \
 chgrp -R www-data /usr/html && \
 chmod -R g+w /usr/html/cache /usr/html/feed-icons /usr/html/lock
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
